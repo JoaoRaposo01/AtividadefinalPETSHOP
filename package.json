@@ -1,0 +1,15 @@
+{
+  "name": "atividade-final-ppi-pet-shop",
+  "version": "1.0.0",
+  "description": "Sistema web para controle de adoção de pets",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "cookie-parser": "^1.4.6"
+  }
+}
