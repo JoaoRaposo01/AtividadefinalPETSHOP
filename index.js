@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json()); // ✅ CORREÇÃO NECESSÁRIA
+app.use(express.json()); 
 app.use(cookieParser());
 
 app.use(session({
@@ -40,7 +40,7 @@ function layout(titulo, conteudo) {
 </html>`;
 }
 
-// parte de login
+
 app.get('/', (req, res) => {
   res.send(layout('Login', `
     <h2>Login</h2>
@@ -69,7 +69,6 @@ app.get('/logout', (req, res) => {
   res.redirect('/');
 });
 
-// menu
 app.get('/menu', auth, (req, res) => {
   res.send(layout('Menu', `
     <h2>Menu</h2>
@@ -82,7 +81,6 @@ app.get('/menu', auth, (req, res) => {
   `));
 });
 
-// interessados
 app.get('/interessados', auth, (req, res) => {
   res.send(layout('Interessados', `
     <h2>Cadastrar Interessado</h2>
@@ -107,7 +105,6 @@ app.post('/interessados', auth, (req, res) => {
   res.redirect('/interessados');
 });
 
-// pets
 app.get('/pets', auth, (req, res) => {
   res.send(layout('Pets', `
     <h2>Cadastrar Pet</h2>
@@ -132,7 +129,6 @@ app.post('/pets', auth, (req, res) => {
   res.redirect('/pets');
 });
 
-// adoção
 app.get('/adotar', auth, (req, res) => {
   res.send(layout('Adoção', `
     <h2>Adotar Pet</h2>
